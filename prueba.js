@@ -75,3 +75,51 @@ const numberOfAllGenderStudents = numberOfMaleStudents + numberOfFemaleStudents;
   }
 
 /* Ejercicio 8 */
+function Women(students) {
+  let fem = 0;
+  students.forEach(object => {
+    if (object.gender == 'female') {
+      fem++;
+    }
+  });
+  if(fem == students.length) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+}
+Women(students);
+
+/* Ejercicio 9 */
+function TeenStudent(students) {
+  students.forEach(object => {
+    if(object.age > 20 && object.age < 25) {
+      console.log(`Los nombres de los alumnos que tienen entre 20 y 25 años son: ${object.name}`);
+    }
+  });
+}
+
+TeenStudent(students);
+
+/* Ejercicio 10 */
+
+
+
+/* Ejercicio 13 */
+function AverageAgeFemale(students) {
+  let years = [];
+  students.forEach(object => {
+    if(object.gender == "female") {
+      edad.push(object.age);
+    }
+  });
+  //console.log(years);
+  let sum = 0;
+  for (let i = 0; i < years.length; i++){  
+    sum = sum + years[i];
+  }
+  const average = sum/years.length;
+  console.log(`La edad media de las chicas de la clase es ${average}`);
+}
+
+AverageAgeFemale(students);
