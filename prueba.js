@@ -103,7 +103,60 @@ TeenStudent(students);
 
 /* Ejercicio 10 */
 
+function newStudent(students, male, female, gender) {
+  const studentGender  = gender.at(calculateRandomNumber(0, gender.length));
+  const studentAge = calculateRandomNumber(20, 50);
+  let newName;
+  if (studentGender == "female") {
+    newName = female.at(calculateRandomNumber(0, female.length));
+  } else {
+    newName = male.at(calculateRandomNumber(0, male.length));
+  }
+  
+  students.push(
+    {
+      age: studentGender,
+      examScores: [],
+      gender: studentAge,
+      name: newName  
+    }
+  );
+  console.log(students);
+}
 
+newStudent(students, availableMaleNames, availableFemaleNames, availableGenders);
+
+/* Ejercicio 11 */
+function bestTeen (students){
+  let edad = [];
+  students.forEach(object => {
+    edad.push(object.age);
+  });
+  const teen = edad.sort();
+  const iteen = teen[0];
+  students.forEach(object => {
+    if(object.age == iteen) {
+      console.log(`La persona más joven de la clase es ${object.name}`);
+    }
+  });
+}
+bestTeen (students);
+
+/* Ejercicio 12 */
+function AverageAge(students) {
+  let edad = [];
+  students.forEach (object => {
+    edad.push(object.age);
+  })
+  let sum = 0;
+  for (let i = 0; i < edad.length; i++){  
+    sum = sum + edad[i];
+  }
+  const av = sum/edad.length;
+  console.log(`La edad media de las chicas de la clase es ${av}`);
+}
+
+AverageAge(students);
 
 /* Ejercicio 13 */
 function AverageAgeFemale(students) {
@@ -123,3 +176,27 @@ function AverageAgeFemale(students) {
 }
 
 AverageAgeFemale(students);
+
+
+/* Ejercicio 14 */
+
+function NewScore(students) {
+  students.forEach (object => {
+    const NewScore = calculateRandomNumber (0,10);
+ //No sé cómo añadirla y asignarla a los alumnos//
+  })
+}
+
+/* Ejercicio 15 */
+function AlphabetOrder (students) {
+  students.sort((student1,student2)=> {
+    if(student1.name > student2.name){
+      return 1
+    }
+    else{
+      return -1
+    }
+    return 0
+    })
+  console.table (students)
+}
